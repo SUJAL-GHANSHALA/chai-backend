@@ -8,7 +8,19 @@ dotenv.config({
 })
 
 
-connectDB()
+connectDB() //because we wrote asymchronus function in db.js, it will return a promise whenits complete
+.then(() => {
+    //jo app.js me likhte the wo yha likhenge
+    //ham app.listen ka use karenge , kyunki abhi server start hi nhi hua, kevel mongodb connect hua, hamari application ne mongodb ka use kerte hue listen kerna start nhi kiya tha
+    app.listen(process.env.PORT || 8000, () => {
+        console.log(`server is running at port : ${process.env.PORT}`);
+    })
+})
+.catch((err) => {
+    console.log("mongoDB connection failed !!!",err);
+})
+
+
 
 
 
