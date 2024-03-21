@@ -80,7 +80,7 @@ userSchema.methods.isPasswordCorrect = async function //watch from 35:00, making
 } // it will return true or false that password is matched or not
 
 
-//these both are JWT tokens
+//these both are JWT tokens , JWT is a bearer token, jiske paas ye token(client or user), ussi ko data bheja jaayega, jiske paas chaabi ussi ko ghar me aane diya jaayega, taaki rightful owner ke pas data jaaaye
 userSchema.methods.generateAccessToken = function(){
     return jwt.sign(
         {

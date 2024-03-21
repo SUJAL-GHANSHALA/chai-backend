@@ -1,6 +1,6 @@
 // with promises with .then 
 const asyncHandler = (requestHandler) => {
-    (res, req, next) => { //this arrow function is implicitly returned by asyncHandler
+    return (res, req, next) => { //this arrow function is implicitly returned by asyncHandler
         Promise.resolve(requestHandler(req, res, next)). //promise is manually invoked,and resolved, search on chatgpt for more
         catch((err) => next(err)) //this promise will either resolve or reject/catch, 
     }

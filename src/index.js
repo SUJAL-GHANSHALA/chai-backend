@@ -1,6 +1,8 @@
 //require('dotenv').config({path: './env'})
 import dotenv from "dotenv"
 import connectDB from "./db/db.js";
+import  express  from "express";
+const app = express()
 
 
 dotenv.config({
@@ -8,7 +10,7 @@ dotenv.config({
 })
 
 
-connectDB() //because we wrote asymchronus function in db.js, it will return a promise whenits complete
+connectDB() //because we wrote asynchronus function in db.js, it will return a promise whenits complete
 .then(() => {
     //jo app.js me likhte the wo yha likhenge
     //ham app.listen ka use karenge , kyunki abhi server start hi nhi hua, kevel mongodb connect hua, hamari application ne mongodb ka use kerte hue listen kerna start nhi kiya tha
